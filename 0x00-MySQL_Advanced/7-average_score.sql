@@ -4,8 +4,9 @@
 DELIMITER //
 CREATE PROCEDURE ComputeAverageScoreForUser(IN user_id INT)
 BEGIN
-	SET @av = (SELECT AVG(score) AS av FROM corrections WHERE user_id=user_id);
-	UPDATE users SET average_score = @av WHERE id = user_id;
+	DECLARE avgscore FLOAT;
+	SELECT AVG(score) AS avgscore FROM corrections AS c WHERE c.user_id=user_id);
+	UPDATE users SET average_score = avgscore WHERE id = user_id;
 END;
 //
 DELIMITER ;
