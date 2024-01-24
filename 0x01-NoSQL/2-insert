@@ -1,0 +1,2 @@
+// inserta document in the colletion
+db.school.insert({key: "value"})
