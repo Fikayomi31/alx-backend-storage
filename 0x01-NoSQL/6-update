@@ -1,0 +1,7 @@
+// add new attribjte to document
+db.school.update(
+  {name: "Holberton school"},
+  {"$set": {address: "972 Missiin street"}},
+  {multi: true}
+);
+
