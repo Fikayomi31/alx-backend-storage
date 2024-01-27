@@ -3,7 +3,8 @@
 
 
 def update_topics(mongo_collection, name, topics):
-    """doc"""
+    """Change all topics of a document
+    """
     key = {"name": name}
     values = {"$set": {"topics": topics}}
     mongo_collection.update_many(key, values)
