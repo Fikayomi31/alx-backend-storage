@@ -10,7 +10,7 @@ def count_calls(method: Callable) -> Callable:
     """wrapper for counting number of calls"""
     key = method.__qualname__
 
-    @wraps(method)
+    @wrap(method)
     def wrapper(self, *args, **kwargs):
         """wrapper for docarated function"""
         self._redis.incr(key)
